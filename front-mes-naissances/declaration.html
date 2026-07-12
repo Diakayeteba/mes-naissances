@@ -5,28 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <section class="home">
-        <header class="header">
-            <a href="index.html" class="logo link">MES NAISSANCES</a>
-            <nav>
-                <ul class="ul">
-                    <li class="li"><a class="link" href="demandes.html">DEmandes</a></li>
-                    <li class="li"><a class="link" href="declaration.html">Declarations</a></li>
-                    <li class="li"><a class="link" href="mon-compte.html">Madou</a></li>
-                </ul>
-            </nav>
-        </header>
-        <h1>Les declarations</h1>
+    <section class="main d-flex flex-column justify-content-between container">
+        <section class="main d-flex flex-column justify-content-between container">
+            <header class="header">
+                <a href="index.html" class="logo link">MES NAISSANCES</a>
+                <nav>
+                    <ul class="ul">
+                        <li class="li"><a class="link" href="demandes.html">DEmandes</a></li>
+                        <li class="li"><a class="link" href="declaration.html">Declarations</a></li>
+                        <li class="li"><a class="link" href="mon-compte.html">Madou</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </section>
 
-        <footer class="footer">
-            By AwKa IT Solutions
-        </footer>
+
+
+        <section class="main d-flex flex-column justify-content-between container">
+            <div id="declaration" class="">
+                <div class="d-flex justify-content-between container mb-2">
+                    <h1>Les declarations</h1>
+                    <button type="button" class="btn btn-success py-0">Recharger</button>
+                </div>
+                <div class="row border border-primary">
+                    <div class="col-md-1 border-secondary border-end">
+                        Date
+                    </div>
+                    <div class="col-md-2 border-secondary border-end">
+                        First Parent
+                    </div>
+                    <div class="col-md-2 border-secondary border-end">
+                        Second parent
+                    </div>
+                    <div class="col-md-2 border-secondary border-end">
+                        Child
+                    </div>
+
+                    <div class="col-md-1 border-secondary border-end">
+                        Birth date
+                    </div>
+                    <div class="col-md-2 border-secondary border-end">
+                        Company
+                    </div>
+                    <div class="col-md-2">
+                        Status
+                    </div>
+
+                </div>
+            </div>
+            <footer class="footer">
+                By AwKa IT Solutions
+            </footer>
+        </section>
     </section>
-
     <script src="" href="css/styles.css"></script>
 </body>
 
