@@ -99,30 +99,30 @@ function recharger() {
   // Utilisation de .join("") à la fin pour éviter les virgules parasites à l'affichage HTML
   const declarationsAsHtml = DECLARATIONS.map((item, index) => {
     return `
-        <div class="row border border-primary my-2">
+        <div class="row border border-primary my-2 declaration">
             <div class="col-md-1 border-secondary border-end">
                 ${item.registered || ""}
             </div>
             <div class="col-md-2 border-secondary border-end">
-                <p><b>${item.firstParent?.firstName || ""} ${item.firstParent?.lastName || ""}</b></p>
-                <p>${item.firstParent?.email || ""}</p>
-                <p>${item.firstParent?.phone || ""}</p>
+                <p class="mb-0 text-sm "><b>${item.firstParent?.firstName || ""} ${item.firstParent?.lastName || ""}</b></p>
+                <p class="mb-0 text-sm ">${item.firstParent?.email || ""}</p>
+                <p class="mb-0 text-sm ">${item.firstParent?.phone || ""}</p>
             </div>
             <div class="col-md-2 border-secondary border-end">
-                <p><b>${item.secondParent?.firstName || ""} ${item.secondParent?.lastName || ""}</b></p>
-                <p>${item.secondParent?.email || ""}</p>
-                <p>${item.secondParent?.phone || ""}</p>
+                <p class="mb-0 text-sm "><b>${item.secondParent?.firstName || ""} ${item.secondParent?.lastName || ""}</b></p>
+                <p class="mb-0 text-sm ">${item.secondParent?.email || ""}</p>
+                <p class="mb-0 text-sm ">${item.secondParent?.phone || ""}</p>
             </div>
             <div class="col-md-2 border-secondary border-end">
-                 <p>${item.child?.firstName || "Prénom inconnu"} ${item.child?.lastName || ""}</p>
+                 <p class="mb-0 text-sm " >${item.child?.firstName || "Prénom inconnu"} ${item.child?.lastName || ""}</p>
             </div>
 
             <div class="col-md-1 border-secondary border-end">
-                 <p>${item.child?.birthDate ? new Date(item.child.birthDate).toLocaleDateString() : ""}</p>
+                 <p class="mb-0 text-sm ">${item.child?.birthDate ? new Date(item.child.birthDate).toLocaleDateString() : ""}</p>
             </div>
             <div class="col-md-2 border-secondary border-end">
-                <p>${item.company?.name || ""}</p>
-                <p>${item.company?.address || ""}</p>
+                <p class="mb-0 text-sm ">${item.company?.name || ""}</p>
+                <p class="mb-0 text-sm ">${item.company?.address || ""}</p>
             </div>
             <div class="col-md-2">
                 <span class="badge bg-info">${item.status || "NON DEFINI"}</span>
