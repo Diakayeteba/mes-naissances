@@ -1,0 +1,70 @@
+{
+    "declarations":  [
+  {
+    id: "60c72b2f9b1d1234567890ab",
+    status: "VALIDE",
+    firstParent: {
+      id: "60c72b2f9b1d1234567890cd",
+      gender: "female",
+      firstName: "Jane",
+      lastName: "Doe",
+      email: "jane.doe@example.com",
+      phone: "+1 (555) 555-1234",
+    },
+    secondParent: {
+      id: "60c72b2f9b1d1234567890ef",
+      gender: "male",
+      firstName: "John",
+      lastName: "Smith",
+      email: "john.smith@example.com",
+      phone: "+1 (555) 555-5678",
+    },
+    child: {
+      id: "60c72b2f9b1d1234567890gh",
+      gender: "male",
+      firstName: "Leo",
+      lastName: "Doe",
+      birthDate: "2018-04-12T10:30:00 -02:00",
+    },
+    company: {
+      name: "ECOLE PRIMAIRE DU CENTRE",
+      address: "123 Rue de la Paix, Paris, Île-de-France, 75002",
+    },
+    about: "Inscription pour la rentrée scolaire.",
+    registered: "2026-02-15T14:22:12 -01:00",
+  },
+  {
+    id: "60c72b2f9b1d1234567890ij",
+    status: "NOUVEAU",
+    firstParent: {
+      id: "60c72b2f9b1d1234567890kl",
+      gender: "male",
+      firstName: "Marc",
+      lastName: "Dubois",
+      email: "marc.dubois@example.com",
+      phone: "+1 (555) 555-9876",
+    },
+    secondParent: {
+      id: "60c72b2f9b1d1234567890mn",
+      gender: "female",
+      firstName: "Sophie",
+      lastName: "Dubois",
+      email: "sophie.dubois@example.com",
+      phone: "+1 (555) 555-4321",
+    },
+    child: {
+      id: "60c72b2f9b1d1234567890op",
+      gender: "female",
+      firstName: "Emma",
+      lastName: "Dubois",
+      birthDate: "2019-08-22T11:15:00 -02:00",
+    },
+    company: {
+      name: "CRECHE DES PETITS LOUPS",
+      address: "456 Avenue de la République, Lyon, Auvergne-Rhône-Alpes, 69002",
+    },
+    about: "Demande de garde temps plein.",
+    registered: "2026-05-10T09:05:43 -01:00",
+  },
+];
+}
