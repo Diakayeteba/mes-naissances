@@ -4,8 +4,10 @@ import Message from "../components/Message";
 function App() {
   return (
     <section>
-       <Message firstName="Madou" LastName="DIAKAYETEBA"/> 
-       <Message/> 
+       <Message firstName="Madou" lastName="DIAKAYETEBA"/> 
+       <Message firstName="AwouKa" lastName="IT Solutions"/> 
+       <Message firstName="InG" lastName="Dev"/> 
+       
        
     </section>
   );
