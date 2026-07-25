@@ -2,6 +2,12 @@ import Message from "../components/Message";
 
 
 function App() {
-  return <Message/>; 
+  return (
+    <section>
+       <Message firstName="Madou" LastName="DIAKAYETEBA"/> 
+       <Message/> 
+       
+    </section>
+  );
 }
 export default App;
