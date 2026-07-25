@@ -7,12 +7,16 @@ type Props= {
 };
 function Message(props:Props){
     return (
-        <p>
-            Bonjour {props.firstName} {props.lastName}
-            {props?.email && ( <span>{props.email}</span>)}
-            {props?.adress && ( <span>{props.adress}</span>)}
-            {props?.phone ? ( <span>{props.phone}</span>):null}
-        </p>  
+        <>
+            <p>
+                Bonjour {props.firstName} {props.lastName}
+            </p> 
+            <p>
+                {props?.email && ( <span>{props.email}</span>)}
+                {props?.adress && ( <span>{props.adress}</span>)}
+                {props?.phone ? ( <span>{props.phone}</span>):null}
+            </p> 
+        </>
     );
 }
 
