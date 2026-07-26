@@ -15,16 +15,18 @@ type Props = {
 };
 
 function Users(props : Props) {
+    
     const users = props.users;
+   
     return (
         <section className="grid">
             {users.map((user : User) =>(
-                <article className="user">
-                    <h3 className="#">
+                <article className=" rounded-lg user border border-gray-100 md:grid grid-cols-3 gap-4 ">
+                    <h3 className="text-lg  border border-gray-500">
                         <p>{user.firstName} {user.lastName}</p>
                     </h3>
-                    <p className="#">{user.email}</p>
-                    <p className="#">{user.phone}</p>
+                    <p className="text-base ">{user.email}</p>
+                    <p className="text-base ">{user.phone}</p>
                 </article>
             ))}
         </section>
