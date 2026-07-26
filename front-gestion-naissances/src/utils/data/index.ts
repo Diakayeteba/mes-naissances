@@ -54,7 +54,7 @@ const USERS = [
     "firstName": "Enid",
     "lastName": "Dalton",
     "birthDate": "2023-04-10T06:18:21 -02:00",
-    "email": "eniddalton@strezzo.com",
+    
     "phone": "+1 (908) 519-2478",
     "address": "107 Sheffield Avenue, Tibbie, Wisconsin, 2543",
     "about": "aute id consectetur enim et fugiat eu non laboris non"
