@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { USERS } from "../utils/data";
+import { USERS } from "../../utils/data";
 
 type User = {
      id : string,
