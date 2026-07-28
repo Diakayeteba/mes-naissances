@@ -1,5 +1,8 @@
+import { useState } from "react";
+import { USERS } from "../utils/data";
+
 type User = {
-     index : string,
+     id : string,
     gender : string,
     picture : string,
     firstName : string,
@@ -17,51 +20,90 @@ type Props = {
  //Destructure les props
     //const users = props.users;
     //const {users} = props;
-function Users({users} : Props) {
-    let usersSorted: User[] =users;
-    const sortBy = (field: string) => {
+function Users() {
+    //le Hook
+    const[usersSorted, setUsersSorted]= useState<User[]>(USERS);
+    const[alphabetOrder, setAlphabetOrder]= useState(1);
+    const sortBy = (field: string, value: string) => {
         console.log(field)
-        usersSorted = usersSorted.sort((firstUser: User, secondUser: User) => {
+        const result = usersSorted.sort((firstUser: User, secondUser: User) => {
             const fieldInFirstUser = firstUser[field as keyof User] || "";
             const fieldInSecondUser = secondUser[field as keyof User] || "";
+            console.log(fieldInFirstUser, fieldInSecondUser);
 
+            let order = 1;
+            if (value === "male" || value === "-1" ){
+                order = -1;
+            }
+
+            let sortResult = 0;
             if (fieldInFirstUser > fieldInSecondUser){
-                return 1;
+                sortResult = 1;
             }
             if (fieldInFirstUser < fieldInSecondUser){
-                return -1;
+                sortResult = -1;
             }
 
-            return 0
+            return sortResult * order;
 
         });
+        setUsersSorted([...result]);
 
-        }
+        };
+
+          const sortAlphabetically = () => {
+      
+        const result = usersSorted.sort((firstUser: User, secondUser: User) => {
+            const fieldInFirstUser = firstUser.firstName ;
+            const fieldInSecondUser = secondUser.firstName;
+
+            const order = alphabetOrder === 1 ? -1 : 1;
+            setAlphabetOrder(order);
+
+            let sortResult = 0;
+            if (fieldInFirstUser > fieldInSecondUser){
+                sortResult = 1;
+            }
+            if (fieldInFirstUser < fieldInSecondUser){
+                sortResult = -1;
+            }
+
+            return sortResult * order;
+
+        });
+        setUsersSorted([...result]);
+
+        };
     
     return (
         <section >
             <div className="flex justify-end items-center text-my-2 gap-2">
                 <span>Trier par</span>
                 <button type="button"
-                 className="border border-gray-50 rounded-md py-2 px-1 text-xs"
-                    onClick={()=> sortBy("male")}
+                 className="border border-gray-500 rounded-md py-2 px-1 text-xs bg-green-500"
+                    onClick={()=> sortBy("gender", "male")}
                 >
                     Hommes
                     
                 </button>
                 <button type="button"
-                 className="border border-gray-50 rounded-md py-2 px-1 text-xs"
-                     onClick={()=> sortBy("female")}
+                 className="border border-gray-50 rounded-md py-2 px-1 text-xs bg-blue-700"
+                     onClick={()=> sortBy("gender", "female")}
                  >
                     Femmes
                 </button>
-                
-
+                <button type="button"
+                 className="border border-gray-50 rounded-md py-2 px-1 text-xs bg-amber-400"
+                     onClick={()=> sortAlphabetically()}
+                 >
+                    DE A - Z / Z - A
+                </button>
+               
             </div>
 
-            <div className=" ">
-            {usersSorted.map(({gender, firstName, lastName, phone, email = "Indisponible"} : User) =>(
-                <article className=" rounded-lg user border border-gray-100 md:grid grid-cols-3 gap-4 ">
+              <div className=" ">
+            {usersSorted.map(({id, gender, firstName, lastName, phone, email = "Indisponible"} : User) =>(
+                <article className=" rounded-lg user border border-gray-100 md:grid grid-cols-3 gap-4 " key={id}>
                     <h3 className="text-lg  border border-gray-500">
                         <p>{gender} {firstName} {lastName}</p>
                     </h3>
@@ -70,6 +112,8 @@ function Users({users} : Props) {
                 </article>
             ))}
             </div>
+
+          
         </section>
     );
 };
