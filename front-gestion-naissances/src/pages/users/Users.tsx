@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { USERS } from "../../utils/data";
 
 type User = {
@@ -74,6 +74,21 @@ function Users() {
         setUsersSorted([...result]);
 
         };
+        //Le hook Use effect
+        const getUsersWithoutAsyncAwait = () =>{
+            fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(users => setUsersSorted(users));
+        };
+
+        const getUsersWithoutAsyncAwait = async() =>{
+           const response = await fetch('https://jsonplaceholder.typicode.com/users')
+            const users = await response.json();
+            setUsersSorted(users);
+
+        useEffect(() => {
+            getUsersWithoutAsyncAwait();
+        }, []);
     
     return (
         <section >
