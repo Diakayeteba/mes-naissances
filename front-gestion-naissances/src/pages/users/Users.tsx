@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { USERS } from "../../utils/data";
+import { Link } from "react-router-dom";
 
 type User = {
-     id : string,
-    gender : string,
-    picture : string,
-    firstName : string,
- 	lastName : string,
-    email : string,
-    phone : number,
-    address : string,
-    about : string,
+   id: string;
+    gender: string;     // Le ? évite l'erreur car l'API n'a pas de genre
+    picture: string;
+    firstName?: string;  // Le ? évite l'erreur car l'API utilise "name"
+    lastName?: string;
+    birthDate: string;
+    email?: string;
+    phone?: number | string; // Permet d'accepter les numéros sous forme de texte de l'API
+    address?: string;
+    about?: string;
     };
-
 type Props = {
     users : User[];
 };
@@ -77,17 +78,18 @@ function Users() {
         //Le hook Use effect
         const getUsersWithoutAsyncAwait = () =>{
             fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(users => setUsersSorted(users));
+            .then(response => response.json())
+            .then(users => setUsersSorted(users));
         };
 
-        const getUsersWithoutAsyncAwait = async() =>{
+        const getUsersWithAsyncAwait = async() =>{
            const response = await fetch('https://jsonplaceholder.typicode.com/users')
             const users = await response.json();
             setUsersSorted(users);
+            };
 
         useEffect(() => {
-            getUsersWithoutAsyncAwait();
+            getUsersWithAsyncAwait();
         }, []);
     
     return (
@@ -117,14 +119,15 @@ function Users() {
             </div>
 
               <div className=" ">
-            {usersSorted.map(({id, gender, firstName, lastName, phone, email = "Indisponible"} : User) =>(
-                <article className=" rounded-lg user border border-gray-100 md:grid grid-cols-3 gap-4 " key={id}>
+            {usersSorted.map(({id, gender, firstName, lastName, phone, email = "Indisponible"} : User, index: number) =>(
+                <Link to ={`/me/users/${id}`}
+                 className=" rounded-lg user border border-gray-100 md:grid grid-cols-3 gap-4 " key={id || index}>
                     <h3 className="text-lg  border border-gray-500">
                         <p>{gender} {firstName} {lastName}</p>
                     </h3>
                     <p className="text-base ">{email}</p>
                     <p className="text-base ">{phone}</p>
-                </article>
+                </Link>
             ))}
             </div>
 

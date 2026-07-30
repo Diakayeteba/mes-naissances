@@ -18,6 +18,10 @@ const routes = createBrowserRouter([
           {
             path: "users",
             element : <Users/>
+          },
+          {
+            path: "users/:userId",
+            element : <Users/>
           }
         ]
       }
