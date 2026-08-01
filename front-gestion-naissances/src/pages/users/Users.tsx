@@ -76,11 +76,11 @@ function Users() {
 
         };
         //Le hook Use effect
-        const getUsersWithoutAsyncAwait = () =>{
+        /***const getUsersWithoutAsyncAwait = () =>{
             fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(users => setUsersSorted(users));
-        };
+        };*/
 
         const getUsersWithAsyncAwait = async() =>{
            const response = await fetch(`https://jsonplaceholder.typicode.com/users`)
