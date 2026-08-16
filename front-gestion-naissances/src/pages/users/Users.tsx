@@ -62,7 +62,7 @@ function Users() {
             setAlphabetOrder(order);
 
             let sortResult = 0;
-            if (fieldInFirstUser > fieldInSecondUser){
+            if (fieldInFirstUser> fieldInSecondUser){
                 sortResult = 1;
             }
             if (fieldInFirstUser < fieldInSecondUser){
