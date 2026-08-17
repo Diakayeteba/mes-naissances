@@ -4,7 +4,7 @@ type Props= {
     email?: string;
     adress?: string;
     phone?: number;
-    text : string;
+    text : string | number ;
 };
 function Message(props:Props){
     return (
